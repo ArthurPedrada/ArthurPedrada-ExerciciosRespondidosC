@@ -1,0 +1,16 @@
+include <stdio.h>
+// O programa lê o valor das var principais, e armazena o valor de A em X e B recupera o valor de A recebendo X.
+int main() {
+//Declarando as variáveis 
+Int a,b,x;
+printf("Digite o valor de A:");
+scanf("%d",&a);
+printf("Digite o valor de B:");
+scanf ("%d",&b);
+x=a;
+a=b;
+b=x;
+printf("%d\n",a);
+printf("%d",b);
+    return 0;
+}
