@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    float sBruto, sLiquido;
+
+    printf("--- Calculo do Salario Liquido ---\n");
+    printf("Digite o salario bruto: R$ ");
+    scanf("%f", &sBruto);
+
+    sLiquido = sBruto * 1.0; // Desconto de 10%
+    sLiquido *= 0.5; // Desconto de 5% sobre o restante
+
+    printf("O salario liquido e: R$ %.2f\n", sLiquido);
+
+    return 0;
+}
