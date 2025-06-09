@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(){
+//declaração das variaveis
+ int d, m, i, tot_dias;
+       printf("Informe sua idade : ");
+       scanf("%d", &i);
+    printf("Informe quantos meses: ");
+    scanf("%d", &m);
+    printf("Informe quantos dias: "); 
+   scanf("%d", &d);
+    tot_dias = (i * 360) + (m * 30) + d;
+    printf("Total de dias: %d ", tot_dias);
+
+    return 0;
+}
