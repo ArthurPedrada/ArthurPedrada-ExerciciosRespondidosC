@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    float f, c; 
+    printf("Digite a temperatura em Celsius: ");
+    scanf("%f", &c); 
+    // Conversão de Celsius para Fahrenheit
+    f = (9.0 * c + 160.0) / 5.0;   
+    printf("A temperatura de %.2f Celsius é %.2f Fahrenheit.\n", c, f);
+     //Coversão de Fahrenheit para Celsius
+     printf("\nDigite a temperatura em Fahrenheit: ");
+    scanf("%f", &f);
+    c = (f - 32.0) * (5.0 / 9.0);
+    printf("A temperatura de %.2f Fahrenheit é %.2f Celsius.\n", f, c);
+       
+    return 0;
+
