@@ -1,0 +1,25 @@
+ #include <stdio.h>
+
+int main() {
+    //Declaração das váriaveis
+float ht,vh,pd,sb,sl,td;
+   printf("Digite as horas trabalhadas no mês:");
+   scanf("%f",&ht);
+   printf("Digite o valor da hora trabalhada:");
+   scanf("%f",&vh);
+   printf("Digite o percentual de desconto:");
+   scanf("%f",&pd);
+   //Calculo das variáveis Sbruto,TDesconto e SLiquido
+    sb= ht * vh;  
+     td= (pd/100)*sb;
+     sl = sb - td;
+ printf("\n--- Resumo dos Cálculos ---\n");
+printf("Hora Trabalhada: %.2f\n", ht);
+printf("Valor da Hora Trabalhada: %.2f\n", vh);
+printf("Percentual de Desconto: %.2f%%\n", pd);
+printf("Salário Bruto: %.2f\n", sb);
+printf("Total de Desconto: %.2f\n", td);
+printf("Salário Líquido: %.2f\n", sl);
+    return 0;
+
+
