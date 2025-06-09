@@ -1,0 +1,14 @@
+#include <stdio.h>
+//Soma e quadrado da Soma
+int main() {
+//Declarando as variáveis 
+            int  a,b,q,s;
+printf("Digite o valor:"); 
+scanf("%d",&a); 
+printf("Digite o segundo valor:"); 
+scanf("%d",&b); 
+s=a+b;
+q=s*s;
+printf("O quadrado desse numero é:%d\n",q); 
+  return 0;
+}
