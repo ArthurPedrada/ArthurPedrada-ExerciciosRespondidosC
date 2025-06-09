@@ -1,0 +1,17 @@
+include <stdio.h>
+//Media de dois numeros
+int main() {
+    float Val1, Val2;
+    float Media;
+
+    printf("--- Media de Dois Numeros ---\n");
+    printf("Digite o primeiro valor: ");
+    scanf("%f", &Val1);
+    printf("Digite o segundo valor: ");
+    scanf("%f", &Val2);
+
+    Media = (Val1 + Val2) / 2.0;
+    printf("A media dos dois numeros e: %.2f\n", Media);
+
+    return 0;
+}
