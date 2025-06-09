@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int Int1, Int2;
+    int quociente, resto;
+
+    printf("--- Quociente e Resto da Divisao Inteira ---\n");
+    printf("Digite o primeiro numero inteiro: ");
+    scanf("%d", &Int1);
+    printf("Digite o segundo numero inteiro: ");
+    scanf("%d", &Int2);
+
+    if (Int2 != 0) { // Evita divisao por zero
+        quociente = Int1 / Int2;
+        resto = Int1 % Int2;
+        printf("Quociente da divisao: %d\n", quociente);
+        printf("Resto da divisao: %d\n", resto);
+    } else {
+        printf("Erro: Divisao por zero nao e permitida.\n");
+    }
+
+    return 0;
+}
