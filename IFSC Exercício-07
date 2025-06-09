@@ -1,0 +1,19 @@
+include <stdio.h>
+
+int main() {
+//Declarando as variáveis 
+float v, t,l_usados,d;
+printf("Digite a velocidade:");
+scanf("%f",&v );
+printf("Digite o tempo:");
+scanf("%f",&t );
+d=t*v;
+l_usados = d/ 12;
+printf("Valor da Velocidade: %.2f",v);
+printf("Tempo gasto: %.2f",t);
+printf("Distancia percorrida: %.2f",d);
+printf("Litros usados: %.2f",l_usados);
+
+
+    return 0;
+}
