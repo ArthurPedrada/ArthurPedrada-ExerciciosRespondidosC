@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+    float chicoAltura = 1.50; // Altura inicial de Chico em metros
+    float zeAltura = 1.10;    // Altura inicial de Zé em metros
+    int anos = 0;             // Contador de anos
+    printf("--- Comparacao de Altura entre Chico e Ze ---\n");
+    while (zeAltura <= chicoAltura) { // O loop continua enquanto Zé não for maior que Chico
+        chicoAltura += 0.02;          // Chico cresce 2 cm por ano
+        zeAltura += 0.03;             // Zé cresce 3 cm por ano
+        anos++;                       // Incrementa o contador de anos
+    }
+    printf("Anos necessarios para Ze ser maior que Chico: %d\n", anos);
+    printf("Altura final de Chico: %.2f m\n", chicoAltura);
+    printf("Altura final de Ze: %.2f m\n", zeAltura);
+    return 0;
+}
