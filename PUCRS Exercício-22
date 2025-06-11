@@ -1,21 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int Matric, AA, S, D;
+    int A, B;
 
-    printf("--- Extracao de Ano e Semestre da Matricula ---\n");
-    printf("Digite o numero de matricula (AASDDD): ");
-    scanf("%d", &Matric);
+    printf("--- Maior de Dois Numeros ---\n");
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &A);
+    printf("Digite o segundo numero: ");
+    scanf("%d", &B);
 
-    // Extrai ano, semestre e ordem
-    D = Matric % 10000;
-    Matric /= 10000;
-    S = Matric % 10;
-    Matric /= 10;
-    AA = Matric;
-
-    printf("Ano de matricula: %d\n", AA);
-    printf("Semestre: %d\n", S);
+    if (A > B) {
+        printf("O maior numero e: %d\n", A);
+    } else if (B > A) {
+        printf("O maior numero e: %d\n", B);
+    } else {
+        printf("Os numeros sao iguais.\n");
+    }
 
     return 0;
 }
+
