@@ -1,1 +1,49 @@
+#include <stdio.h>
+
+// Funcao auxiliar para imprimir o vetor
+void imprimirVetor(int arr[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    // Define o tamanho do vetor
+    const int TAMANHO = 8;
+    int vetor[TAMANHO]; // Declara um vetor de 8 inteiros
+
+    printf("--- Ordenacao de Vetor em Ordem Crescente ---\n");
+
+    // Preenche o vetor com 8 numeros inteiros fornecidos pelo usuario
+    printf("Digite 8 numeros inteiros para o vetor:\n");
+    for (int i = 0; i < TAMANHO; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+
+    // Imprime o vetor ANTES da ordenacao
+    printf("\nVetor ANTES da ordenacao:\n");
+    imprimirVetor(vetor, TAMANHO);
+
+    // Algoritmo de ordenacao (Bubble Sort simples)
+    // Percorre o vetor varias vezes, trocando elementos adjacentes se estiverem na ordem errada
+    for (int i = 0; i < TAMANHO - 1; i++) {
+        for (int j = 0; j < TAMANHO - 1 - i; j++) {
+            // Se o elemento atual for maior que o proximo, troca
+            if (vetor[j] > vetor[j+1]) {
+                // Realiza a troca
+                int temp = vetor[j];
+                vetor[j] = vetor[j+1];
+                vetor[j+1] = temp;
+            }
+        }
+    }
+
+    // Imprime o vetor DEPOIS da ordenacao
+    printf("\nVetor DEPOIS da ordenacao (crescente):\n");
+    imprimirVetor(vetor, TAMANHO);
+
+    return 0;
+}
 
