@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para os dois numeros inteiros
+    int num1, num2;
+
+    printf("--- Maior e Menor Entre Dois Numeros ---\n");
+
+    // Solicita e le os dois numeros
+    printf("Digite o primeiro numero inteiro: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo numero inteiro: ");
+    scanf("%d", &num2);
+
+    // Compara os numeros para determinar o maior e o menor, ou se sao iguais
+    if (num1 > num2) {
+        printf("\nO maior numero eh: %d\n", num1);
+        printf("O menor numero eh: %d\n", num2);
+    } else if (num2 > num1) {
+        printf("\nO maior numero eh: %d\n", num2);
+        printf("O menor numero eh: %d\n", num1);
+    } else {
+        printf("\nOs numeros sao iguais: %d\n", num1);
+    }
+
+    return 0;
+}
