@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int Codigo;
+    int DigitoV;
+    int A, B, C, D, E;
+    int S;
+    printf("Digite um codigo de cinco algarismos: ");
+    scanf("%d", &Codigo);
+
+    // Extrai os algarismos do código
+    E = Codigo % 10;
+    Codigo /= 10;
+    D = Codigo % 10;
+    Codigo /= 10;
+    C = Codigo % 10;
+    Codigo /= 10;
+    B = Codigo % 10;
+    Codigo /= 10;
+    A = Codigo % 10;
+
+    S = 6 * A + 5 * B + 4 * C + 3 * D + 2 * E;
+    DigitoV = S % 7;
+
+    printf("O digito verificador e: %d\n", DigitoV);
+
+    return 0;
+}
