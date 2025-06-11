@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int Matricula, AA, S, D;
+
+    printf("--- Extracao de Ano e Semestre da Matricula ---\n");
+    printf("Digite o numero de matricula (AASDDD): ");
+    scanf("%d", &Matricula);
+
+    // Extrai ano, semestre e ordem
+    D = Matricula % 10000;
+    Matricula /= 10000;
+    S = Matricula % 10;
+    Matricula /= 10;
+    AA = Matricula;
+
+    printf("Ano de matricula: %d\n", AA);
+    printf("Semestre: %d\n", S);
+
+    return 0;
+}
