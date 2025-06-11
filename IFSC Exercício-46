@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para o numero lido e as somas
+    int numero;
+    long long somaPares = 0;   // Usamos long long para somas grandes
+    long long somaImpares = 0;
+
+    printf("--- Soma de Numeros Pares e Impares (Terminada por Zero) ---\n");
+
+    // Loop que continua ate que o usuario digite 0
+    while (1) { // Loop infinito, sera quebrado por 'break'
+        printf("Digite um numero inteiro (0 para terminar): ");
+        scanf("%d", &numero);
+
+        // Condicao de termino do loop
+        if (numero == 0) {
+            break; // Sai do loop
+        }
+
+        // Verifica se o numero eh par ou impar e soma
+        if (numero % 2 == 0) {
+            somaPares += numero; // somaPares = somaPares + numero;
+        } else {
+            somaImpares += numero; // somaImpares = somaImpares + numero;
+        }
+    }
+
+    // Imprime as somas
+    printf("\nSoma dos numeros pares: %lld\n", somaPares);
+    printf("Soma dos numeros impares: %lld\n", somaImpares);
+
+    return 0;
+}
