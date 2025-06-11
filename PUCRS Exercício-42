@@ -1,1 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    // Define o tamanho da matriz
+    const int LINHAS = 3;
+    const int COLUNAS = 3;
+    int matriz[LINHAS][COLUNAS]; // Declara uma matriz 3x3 de inteiros
+    int somaDiagonalPrincipal = 0;
+
+    printf("--- Soma dos Elementos da Diagonal Principal de uma Matriz 3x3 ---\n");
+
+    // Preenche a matriz com numeros inteiros fornecidos pelo usuario
+    printf("Digite os elementos da matriz 3x3:\n");
+    for (int i = 0; i < LINHAS; i++) {
+        for (int j = 0; j < COLUNAS; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Calcula a soma dos elementos da diagonal principal
+    // A diagonal principal sao os elementos onde a linha (i) eh igual a coluna (j)
+    for (int i = 0; i < LINHAS; i++) {
+        somaDiagonalPrincipal += matriz[i][i]; // Adiciona o elemento da diagonal principal
+    }
+
+    // Imprime a matriz para visualizacao (opcional)
+    printf("\nMatriz digitada:\n");
+    for (int i = 0; i < LINHAS; i++) {
+        for (int j = 0; j < COLUNAS; j++) {
+            printf("%4d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Imprime a soma da diagonal principal
+    printf("\nA soma dos elementos da diagonal principal eh: %d\n", somaDiagonalPrincipal);
+
+    return 0;
+}
 
