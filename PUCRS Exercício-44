@@ -1,1 +1,42 @@
+#include <stdio.h>
+#include <string.h> 
+
+int main() {
+    // Variavel para armazenar a string
+    char str[100]; // Suficiente para a maioria das palavras
+    int tamanho;
+    int ehPalindromo = 1; // Assume que eh palindromo ate provar o contrario
+
+    printf("--- Verifica se uma String eh um Palindromo ---\n");
+
+    // Solicita e le a string
+    printf("Digite uma palavra ou frase (max 99 caracteres): ");
+    // fgets le a linha inteira, incluindo o '\n'.
+    fgets(str, sizeof(str), stdin);
+
+    // Remove o '\n' (nova linha) capturado por fgets, se houver
+    str[strcspn(str, "\n")] = '\0';
+
+    // Obtem o tamanho da string
+    tamanho = strlen(str);
+
+    // Compara caracteres do inicio com caracteres do final
+    for (int i = 0; i < tamanho / 2; i++) {
+        // Ignorar espacos e caracteres nao alfanumericos para uma verificacao mais robusta
+        // Para este exercicio simples, faremos uma comparacao direta
+        if (str[i] != str[tamanho - 1 - i]) {
+            ehPalindromo = 0; // Encontrou caracteres diferentes, nao eh palindromo
+            break;            // Nao precisa verificar mais
+        }
+    }
+
+    // Imprime o resultado
+    if (ehPalindromo == 1) {
+        printf("\n'%s' eh um palindromo.\n", str);
+    } else {
+        printf("\n'%s' NAO eh um palindromo.\n", str);
+    }
+
+    return 0;
+}
 
