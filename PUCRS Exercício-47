@@ -1,1 +1,48 @@
+#include <stdio.h>
+#include <string.h> // Para strcspn e strcpy
+
+// 1. Define a estrutura (struct) para representar dados de um aluno
+struct Aluno {
+    int matricula;
+    char nome[100]; // Supondo que o nome nao exceda 99 caracteres + '\0'
+    float nota1;
+    float nota2;
+    float nota3;
+};
+
+int main() {
+    // 2. Cria uma variavel do tipo Aluno
+    struct Aluno meuAluno;
+
+    // Variavel para limpar o buffer do teclado
+    int c;
+
+    printf("--- Cadastro e Impressao de Dados do Aluno ---\n");
+
+    // 3. Preenche os campos da struct com dados fornecidos pelo usuario
+    printf("Digite a matricula do aluno: ");
+    scanf("%d", &meuAluno.matricula);
+
+    // Limpa o buffer do teclado apos o scanf para o proximo fgets
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    printf("Digite o nome do aluno: ");
+    fgets(meuAluno.nome, sizeof(meuAluno.nome), stdin);
+    meuAluno.nome[strcspn(meuAluno.nome, "\n")] = '\0'; // Remove o '\n'
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &meuAluno.nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &meuAluno.nota2);
+    printf("Digite a terceira nota: ");
+    scanf("%f", &meuAluno.nota3);
+
+    // 4. Imprime os dados do aluno
+    printf("\n--- Dados do Aluno Cadastrado ---\n");
+    printf("Matricula: %d\n", meuAluno.matricula);
+    printf("Nome: %s\n", meuAluno.nome);
+    printf("Notas: %.2f, %.2f, %.2f\n", meuAluno.nota1, meuAluno.nota2, meuAluno.nota3);
+
+    return 0;
+}
 
