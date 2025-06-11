@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para notas, somas, medias e contadores
+    double nota;
+    double somaNotasAluno;
+    double mediaAluno;
+    int contadorAlunosAprovados = 0; // Contador de alunos com media >= 7
+
+    printf("--- Calculo de Media de Alunos e Aprovados ---\n");
+
+    // Loop para 10 alunos
+    for (int i = 1; i <= 10; i++) {
+        somaNotasAluno = 0.0; // Reseta a soma das notas para cada novo aluno
+        printf("\n--- Aluno %d ---\n", i);
+
+        // Loop para ler as 5 notas de cada aluno
+        for (int j = 1; j <= 5; j++) {
+            printf("Digite a %da nota do Aluno %d: ", j, i);
+            scanf("%lf", &nota);
+            somaNotasAluno += nota; // somaNotasAluno = somaNotasAluno + nota;
+        }
+
+        // Calcula a media do aluno
+        mediaAluno = somaNotasAluno / 5.0;
+
+        // Imprime a media do aluno
+        printf("Media do Aluno %d: %.2lf\n", i, mediaAluno);
+
+        // Verifica se o aluno foi aprovado (media >= 7)
+        if (mediaAluno >= 7.0) {
+            contadorAlunosAprovados++; // Incrementa o contador de aprovados
+        }
+    }
+
+    // Imprime o total de alunos aprovados
+    printf("\nQuantidade de alunos com media maior ou igual a 7: %d\n", contadorAlunosAprovados);
+
+    return 0;
+}
