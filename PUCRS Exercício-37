@@ -1,1 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para o numero e um flag para verificar se eh primo
+    int numero;
+    int ehPrimo = 1; // Assume que o numero eh primo ate provar o contrario
+
+    printf("--- Verifica se um Numero eh Primo ---\n");
+
+    // Solicita e le o numero
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &numero);
+
+    // Numeros menores ou iguais a 1 nao sao primos
+    if (numero <= 1) {
+        ehPrimo = 0; // Nao eh primo
+    }
+    // Loop para verificar divisores de 2 ate numero/2
+    else {
+        for (int i = 2; i <= numero / 2; i++) {
+            if (numero % i == 0) {
+                ehPrimo = 0; // Encontrou um divisor, entao nao eh primo
+                break; // Nao precisa verificar mais
+            }
+        }
+    }
+
+    // Imprime o resultado
+    if (ehPrimo == 1) {
+        printf("\nO numero %d eh um numero primo.\n", numero);
+    } else {
+        printf("\nO numero %d NAO eh um numero primo.\n", numero);
+    }
+
+    return 0;
+}
 
