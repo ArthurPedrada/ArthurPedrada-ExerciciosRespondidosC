@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main() {
+    int codAluno;
+    float n1, n2, n3;
+    float maiorNota;
+    float mPonderada;
+    printf("--- Calculo de Media Ponderada e Status de Aprovacao ---\n");
+    do {// Inicio do Do-While
+        printf("\nDigite o codigo do aluno (numero negativo para sair): ");
+        scanf("%d", &codAluno);
+        if (codAluno >= 0) {
+            printf("Digite a primeira nota: ");
+            scanf("%f", &n1);
+            printf("Digite a segunda nota: ");
+            scanf("%f", &n2);
+            printf("Digite a terceira nota: ");
+            scanf("%f", &n3);
+            // Encontra a maior nota entre n1, n2, n3
+            maiorNota = n1;
+            if (n2 > maiorNota) {
+                maiorNota = n2;
+            }
+            if (n3 > maiorNota) {
+                maiorNota = n3;
+            }
+            // Calcula a media ponderada
+            mPonderada = (n1 * 3 + n2 * 3 + n3 * 3 + maiorNota) / 10.0;
+            printf("\n--- Resultados do Aluno %d ---\n", codAluno);
+            printf("Notas: %.2f, %.2f, %.2f\n", n1, n2, n3);
+            printf("Media Ponderada: %.2f\n", mPonderada);
+            if (mPonderada >= 5.0) { // Critério de aprovacao
+                printf("Status: APROVADO\n");
+            } else {
+                printf("Status: REPROVADO\n");
+            }
+        }
+    } while (codAluno >= 0); // Continua enquanto o codigo do aluno nao for negativo
+    return 0;
+}
