@@ -1,1 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    printf("--- Numeros Pares de 1 a 100 ---\n");
+
+    printf("Os numeros pares de 1 a 100 sao:\n");
+
+    // Loop para iterar de 1 a 100
+    for (int i = 1; i <= 100; i++) {
+        // Verifica se o numero eh par
+        if (i % 2 == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n"); // Adiciona uma nova linha no final para melhor formatacao
+
+    return 0;
+}
+
 
