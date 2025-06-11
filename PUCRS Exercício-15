@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int num;             // Variável para armazenar cada número lido
+    int cont_0_25 = 0;   // Contador para o intervalo [0, 25]
+    int cont_26_50 = 0;  // Contador para o intervalo [26, 50]
+    int cont_51_75 = 0;  // Contador para o intervalo [51, 75]
+    int cont_76_100 = 0; // Contador para o intervalo [76, 100]
+
+    printf("--- Contagem de Numeros por Intervalo ---\n");
+    printf("Digite numeros inteiros positivos (digite um numero negativo para finalizar).\n");
+
+    do {
+        printf("Digite um numero: ");
+        scanf("%d", &num);
+
+        if (num >= 0) { // Processa o número apenas se ele não for negativo (condição de parada)
+            if (num >= 0 && num <= 25) {
+                cont_0_25++;
+            } else if (num >= 26 && num <= 50) {
+                cont_26_50++;
+            } else if (num >= 51 && num <= 75) {
+                cont_51_75++;
+            } else if (num >= 76 && num <= 100) {
+                cont_76_100++;
+            }
+            // Números positivos > 100 ou fora dos intervalos especificados não são contados.
+        }
+
+    } while (num >= 0); // O loop continua enquanto o número lido não for negativo
+
+    printf("\n--- Resultados Finais ---\n");
+    printf("Numeros no intervalo [0,25]: %d\n", cont_0_25);
+    printf("Numeros no intervalo [26,50]: %d\n", cont_26_50);
+    printf("Numeros no intervalo [51,75]: %d\n", cont_51_75);
+    printf("Numeros no intervalo [76,100]: %d\n", cont_76_100);
+
+    return 0;
+}
