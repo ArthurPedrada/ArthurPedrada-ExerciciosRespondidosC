@@ -1,0 +1,72 @@
+#include <stdio.h> 
+
+// --- Funções Auxiliares ---
+
+// Função para calcular o fatorial de um número (abordagem iterativa)
+long long calcularFatorial(int num) {
+    if (num < 0) {
+        // Fatorial não é definido para números negativos.
+        // O problema diz que 'm' é inteiro e positivo, mas é bom ter uma validação.
+        return -1; // Retorna um valor para indicar erro
+    }
+    if (num == 0 || num == 1) {
+        return 1; // Fatorial de 0 e 1 é 1
+    }
+
+    long long fatorial = 1; // Usamos long long para suportar fatoriais maiores
+    for (int i = 2; i <= num; i++) {
+        fatorial *= i;
+    }
+    return fatorial;
+}
+
+// --- Função Principal (main) ---
+int main() {
+    int m; // O número lido do usuário
+
+    printf("--- Analise de Numeros (digite 0 para M para parar) ---\n");
+
+    do {
+        printf("\nDigite um numero inteiro positivo (M): ");
+        scanf("%d", &m);
+
+        if (m != 0) { // Continua se M não for o valor de parada
+            if (m < 0) { // O problema diz "positivos", então validamos.
+                printf("Por favor, digite um numero positivo ou 0 para sair.\n");
+                continue; // Volta para o início do loop sem processar
+            }
+
+            if (m % 2 == 0) {
+                // CASO 1: M é PAR - Contar Divisores
+                int qtdDivisores = 0; // Variável para contar os divisores
+                printf("Verificando divisores de %d:\n", m);
+                for (int i = 1; i <= m; i++) {
+                    if (m % i == 0) {
+                        qtdDivisores++;
+                        // Opcional: printf("%d e divisor\n", i); // Para ver os divisores
+                    }
+                }
+                printf("O numero %d possui %d divisores.\n", m, qtdDivisores);
+
+            } else { // M é ÍMPAR
+                if (m < 10) {
+                    // CASO 2: M é ÍMPAR e MENOR que 10 - Calcular Fatorial
+                    long long resultadoFatorial = calcularFatorial(m); // Chama a função fatorial
+                    if (resultadoFatorial != -1) { // Verifica se a função retornou erro
+                        printf("O fatorial de %d e: %lld\n", m, resultadoFatorial);
+                    }
+                } else { // M é ÍMPAR e MAIOR ou IGUAL a 10
+                    // CASO 3: M é ÍMPAR e MAIOR ou IGUAL a 10 - Somar inteiros de 1 até M
+                    // Usando a fórmula da soma de uma PA: soma = m * (m + 1) / 2
+                    long long somaAteM = (long long)m * (m + 1) / 2;
+                    printf("A soma dos inteiros de 1 ate %d e: %lld\n", m, somaAteM);
+                }
+            }
+        }
+
+    } while (m != 0); // Loop principal continua enquanto m não for 0
+
+    printf("\nFim do programa.\n");
+
+    return 0;
+}
