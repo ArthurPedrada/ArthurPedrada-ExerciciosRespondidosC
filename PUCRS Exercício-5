@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int valor;
+    int soma = 0;
+    int contador = 0;
+    float media;
+    printf("--- Media Aritmetica de Valores Positivos (digite negativo para sair) ---\n");
+    do {
+        printf("Digite um valor inteiro positivo (negativo para sair): ");
+        scanf("%d", &valor);
+        if (valor >= 0) { // Considera 0 como valor válido para a soma e contagem
+            soma += valor;
+            contador++;
+        }
+    } while (valor >= 0); // Continua enquanto o valor não for negativo
+    if (contador > 0) {
+        media = (float)soma / contador;
+        printf("Media dos valores positivos: %.2f\n", media);
+    } else {
+        printf("Nenhum valor positivo foi digitado.\n");
+    }
+    return 0;
+}
