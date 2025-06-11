@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int num;          // Variável para armazenar cada número lido
+    int soma = 0;     // Para a soma dos números (exceto o 0)
+    int contador = 0; // Para a quantidade de números (exceto o 0)
+    float media;      // Para a média aritmética
+
+    printf("--- Media Aritmetica e Quantidade de Numeros (digite 0 para finalizar) ---\n");
+
+    do {
+        printf("Digite um numero: ");
+        scanf("%d", &num);
+
+        if (num != 0) { // Se o numero NAO for 0 (o sentinela), inclua-o nos calculos
+            soma += num;      // Acumula a soma
+            contador++;       // Incrementa o contador de numeros validos
+        }
+
+    } while (num != 0); // O loop continua ENQUANTO o numero lido nao for 0
+
+    // Após o loop, calcule e exiba os resultados
+    if (contador > 0) { // Importante: Evita divisao por zero se nenhum numero valido for digitado
+        media = (float)soma / contador; // Calcula a media
+        printf("\n--- Resultados ---\n");
+        printf("Quantidade de numeros lidos: %d\n", contador);
+        printf("Media aritmetica dos numeros lidos: %.2f\n", media);
+    } else {
+        printf("\nNenhum numero valido foi digitado (apenas o 0 foi inserido).\n");
+    }
+
+    return 0;
+}
