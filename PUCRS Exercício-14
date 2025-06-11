@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int num;// Valor lido
+    int somaValores = 0; // Soma de todos os valores (exceto o de parada)
+    int totalValores = 0; // Quantidade total de valores lidos (exceto o de parada)
+    int contPositivos = 0;
+    int contNegativos = 0;
+    float media;
+    float percPositivos;
+    float percNegativos;
+
+    printf("--- Analise de Valores (digite 0 para finalizar) ---\n");
+
+    do {
+        printf("Digite um numero (0 para sair): ");
+        scanf("%d", &num);
+
+        if (num != 0) { // Processa o número apenas se ele não for o valor de parada
+            somaValores += num;
+            totalValores++;
+
+            if (num > 0) {
+                contPositivos++;
+            } else { // Se não é 0 e não é positivo, só pode ser negativo
+                contNegativos++;
+            }
+        }
+
+    } while (num != 0); // Continua enquanto o número lido não for 0
+
+    // Após o loop, faça os cálculos finais e exiba os resultados
+    if (totalValores > 0) { // Evita divisão por zero se nenhum número válido for digitado
+        media = (float)somaValores / totalValores;
+        percPositivos = (float)contPositivos / totalValores * 100;
+        percNegativos = (float)contNegativos / totalValores * 100;
+
+        printf("\n--- Resultados da Analise ---\n");
+        printf("Media aritmetica dos valores lidos: %.2f\n", media);
+        printf("Quantidade de valores positivos: %d\n", contPositivos);
+        printf("Quantidade de valores negativos: %d\n", contNegativos);
+        printf("Percentual de valores positivos: %.2f%%\n", percPositivos);
+        printf("Percentual de valores negativos: %.2f%%\n", percNegativos);
+    } else {
+        printf("\nNenhum valor valido foi digitado para analise.\n");
+    }
+
+    return 0;
+}
