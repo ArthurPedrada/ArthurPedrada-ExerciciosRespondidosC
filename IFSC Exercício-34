@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h> // 
+
+int main() {
+    // Variaveis para cada artigo
+    char nomeArtigo[100];
+    double precoOriginal;
+    double percentualDesconto;
+    double precoComDesconto;
+    // Variavel para acumular o total a pagar
+    double totalAPagar = 0.0;
+    // Variavel para limpar o buffer do teclado
+    int c;
+
+    printf("--- Calculo de Compra de Artigos ---\n");
+
+    // Loop para 4 artigos
+    for (int i = 1; i <= 4; i++) {
+        printf("\n--- Artigo %d ---\n", i);
+
+        // Solicita e le o nome do artigo
+        printf("Digite o nome do artigo: ");
+        // fgets le a linha inteira, incluindo o '\n'.
+        // strcspn remove o '\n' se ele for capturado.
+        fgets(nomeArtigo, sizeof(nomeArtigo), stdin);
+        nomeArtigo[strcspn(nomeArtigo, "\n")] = '\0';
+
+        // Solicita e le o preco e percentual de desconto
+        printf("Digite o preco original (R$): ");
+        scanf("%lf", &precoOriginal);
+
+        printf("Digite o percentual de desconto (%%): ");
+        scanf("%lf", &percentualDesconto);
+
+        // Limpa o buffer do teclado apos o scanf para evitar problemas na proxima leitura de string
+        while ((c = getchar()) != '\n' && c != EOF);
+
+        // Calcula o preco com desconto
+        precoComDesconto = precoOriginal * (1.0 - (percentualDesconto / 100.0));
+
+        // Acumula o preco com desconto no total a pagar
+        totalAPagar += precoComDesconto;
+
+        // Imprime os detalhes do artigo atual
+        printf("\nDetalhes do Artigo %d:\n", i);
+        printf("  Nome: %s\n", nomeArtigo);
+        printf("  Preco Original: R$ %.2lf\n", precoOriginal);
+        printf("  Desconto Aplicado: %.2lf%%\n", percentualDesconto);
+        printf("  Preco com Desconto: R$ %.2lf\n", precoComDesconto);
+    }
+
+    // Imprime o total a pagar final
+    printf("\n--- Resumo da Compra ---\n");
+    printf("TOTAL GERAL A PAGAR: R$ %.2lf\n", totalAPagar);
+
+    return 0;
+}
