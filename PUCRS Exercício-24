@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int m, n;
+    int s; // Variável para armazenar a soma de cada par (m,n)
+
+    printf("--- Soma de N Consecutivos a Partir de M (digite 0 para M para parar) ---\n");
+
+    do {
+        printf("\nDigite o valor de M (0 para sair): ");
+        scanf("%d", &m);
+
+        if (m != 0) {
+            printf("Digite o valor de N: ");
+            scanf("%d", &n);
+
+            s = 0; // Reinicializa a soma para cada novo par (m,n)
+
+            int i; // Variável para controlar os termos a serem somados
+            for (i = 0; i < n; i++) { // Este loop irá rodar 'n' vezes (de 0 até n-1)
+               
+                s += (m + i); // Soma o termo atual (m, m+1, m+2, ...)
+            }
+
+            printf("A soma dos %d inteiros a partir de %d é: %d\n", n, m, s);
+
+        }
+
+    } while (m != 0);
+
+    return 0;
+}
