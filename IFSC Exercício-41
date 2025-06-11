@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <limits.h> // Para INT_MAX e INT_MIN, ou para double pode usar um valor muito grande/pequeno
+
+int main() {
+    // Variaveis para armazenar cada valor, o maior e o menor
+    double valor;
+    double maior;
+    double menor;
+
+    printf("--- Encontra Maior e Menor de 50 Valores ---\n");
+
+    // Le o primeiro valor e o inicializa como maior e menor
+    printf("Digite o 1o valor: ");
+    scanf("%lf", &valor);
+    maior = valor;
+    menor = valor;
+
+    // Loop para ler os 49 valores restantes
+    for (int i = 2; i <= 50; i++) {
+        printf("Digite o %do valor: ", i);
+        scanf("%lf", &valor);
+
+        // Atualiza o maior, se necessario
+        if (valor > maior) {
+            maior = valor;
+        }
+
+        // Atualiza o menor, se necessario
+        if (valor < menor) {
+            menor = valor;
+        }
+    }
+
+    // Imprime o maior e o menor valor encontrados
+    printf("\nO maior valor digitado eh: %.2lf\n", maior);
+    printf("O menor valor digitado eh: %.2lf\n", menor);
+
+    return 0;
+}
