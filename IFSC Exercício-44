@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para a quantidade de numeros (N), o numero lido e as somas
+    int nNumeros;
+    int numero;
+    long long somaPositivos = 0; // Usamos long long para somas grandes
+    long long somaNegativos = 0;
+
+    printf("--- Soma de Numeros Positivos e Negativos (N Valores) ---\n");
+
+    // Solicita a quantidade de numeros (N) ao usuario
+    printf("Digite a quantidade de numeros (N): ");
+    scanf("%d", &nNumeros);
+
+    // Loop para ler N numeros
+    for (int i = 1; i <= nNumeros; i++) {
+        printf("Digite o %do numero: ", i);
+        scanf("%d", &numero);
+
+        // Verifica se o numero eh positivo ou negativo e soma
+        if (numero > 0) {
+            somaPositivos += numero; // somaPositivos = somaPositivos + numero;
+        } else if (numero < 0) {
+            somaNegativos += numero; // somaNegativos = somaNegativos + numero;
+        }
+        // Numeros iguais a zero nao sao somados em nenhuma das categorias
+    }
+
+    // Imprime as somas
+    printf("\nSoma dos numeros positivos: %lld\n", somaPositivos);
+    printf("Soma dos numeros negativos: %lld\n", somaNegativos);
+
+    return 0;
+}
