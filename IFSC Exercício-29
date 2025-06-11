@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(){
+    int idade,converIdade;
+    printf("Digite sua idade em anos: "); 
+    scanf("%d", &idade);
+    converIdade = idade * 360;
+    printf("Voce ja viveu %d dias.\n", converIdade);
+return 0;
+}
