@@ -1,0 +1,16 @@
+#include <stdio.h>
+//Diferença dos dias
+int main() {
+    int pd, sd,difDosDias = 0;
+    printf("Digite o primeiro valor: ");  
+    scanf("%d", &pd);
+    printf("Digite o segundo valor: "); 
+    scanf("%d", &sd);
+    if (pd > sd) {
+        difDosDias = pd - sd;
+    } else { 
+        difDosDias = sd - pd;
+    }
+    printf("A diferenca dos dias e = %d\n", difDosDias); 
+    return 0;
+}                                                     
