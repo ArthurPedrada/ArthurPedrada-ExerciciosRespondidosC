@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para armazenar os tres valores
+    double a, b, c;
+
+    printf("--- Ordem Decrescente de Tres Valores ---\n");
+
+    // Solicita e le os tres valores
+    printf("Digite o primeiro valor (A): ");
+    scanf("%lf", &a);
+    printf("Digite o segundo valor (B): ");
+    scanf("%lf", &b);
+    printf("Digite o terceiro valor (C): ");
+    scanf("%lf", &c);
+
+    printf("\nValores em ordem decrescente:\n");
+
+    // Logica para imprimir em ordem decrescente
+    // Compara A com B e C para ver se A eh o maior
+    if (a >= b && a >= c) {
+        printf("%.2lf\n", a);
+        if (b >= c) {
+            printf("%.2lf\n", b);
+            printf("%.2lf\n", c);
+        } else {
+            printf("%.2lf\n", c);
+            printf("%.2lf\n", b);
+        }
+    }
+    // Se A nao é o maior, compara B com A e C para ver se B é o maior
+    else if (b >= a && b >= c) {
+        printf("%.2lf\n", b);
+        if (a >= c) {
+            printf("%.2lf\n", a);
+            printf("%.2lf\n", c);
+        } else {
+            printf("%.2lf\n", c);
+            printf("%.2lf\n", a);
+        }
+    }
+    // Se nem A nem B sao os maiores, C deve ser o maior
+    else {
+        printf("%.2lf\n", c);
+        if (a >= b) {
+            printf("%.2lf\n", a);
+            printf("%.2lf\n", b);
+        } else {
+            printf("%.2lf\n", b);
+            printf("%.2lf\n", a);
+        }
+    }
+
+    return 0;
+}
+
