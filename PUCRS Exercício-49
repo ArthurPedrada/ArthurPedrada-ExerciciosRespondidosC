@@ -1,1 +1,65 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para a escolha do usuario e medidas
+    int opcao;
+    double lado, base, altura;
+    double area;
+
+    printf("--- Calculo de Area de Figuras Geometricas ---\n");
+
+    do {
+        // Apresenta o menu de opcoes
+        printf("\nEscolha uma figura geometrica para calcular a area:\n");
+        printf("1. Quadrado\n");
+        printf("2. Retangulo\n");
+        printf("3. Triangulo\n");
+        printf("0. Sair\n");
+        printf("Digite sua opcao: ");
+        scanf("%d", &opcao);
+
+        // Limpa o buffer do teclado
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
+
+        switch (opcao) {
+            case 1: // Quadrado
+                printf("\n--- Calculo de Area do Quadrado ---\n");
+                printf("Digite o valor do lado: ");
+                scanf("%lf", &lado);
+                area = lado * lado;
+                printf("A area do quadrado eh: %.2lf\n", area);
+                break;
+            case 2: // Retangulo
+                printf("\n--- Calculo de Area do Retangulo ---\n");
+                printf("Digite o valor da base: ");
+                scanf("%lf", &base);
+                printf("Digite o valor da altura: ");
+                scanf("%lf", &altura);
+                area = base * altura;
+                printf("A area do retangulo eh: %.2lf\n", area);
+                break;
+            case 3: // Triangulo
+                printf("\n--- Calculo de Area do Triangulo ---\n");
+                printf("Digite o valor da base: ");
+                scanf("%lf", &base);
+                printf("Digite o valor da altura: ");
+                scanf("%lf", &altura);
+                area = (base * altura) / 2.0;
+                printf("A area do triangulo eh: %.2lf\n", area);
+                break;
+            case 0: // Sair
+                printf("\nSaindo do programa. Ate mais!\n");
+                break;
+            default: // Opcao invalida
+                printf("\nOpcao invalida. Por favor, escolha uma opcao valida (0 a 3).\n");
+                break;
+        }
+        // Limpa o buffer do teclado apos o scanf para a proxima iteracao
+        while ((c = getchar()) != '\n' && c != EOF);
+
+    } while (opcao != 0); // Continua o loop ate que o usuario escolha sair (0)
+
+    return 0;
+}
 
