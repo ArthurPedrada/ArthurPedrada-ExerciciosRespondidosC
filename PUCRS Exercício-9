@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() {
+    int num;
+    int maior;
+    int menor;
+    printf("---> Encontrando o Maior e o Menor de 50 Numeros <---\n");
+    printf("Por favor, digite 50 numeros inteiros.\n");
+    for (int i = 0; i < 50; i++) {
+        printf("Digite o %dº numero: ", i + 1);
+        scanf("%d", &num);
+        if (i == 0) { // Inicializa maior e menor com o primeiro numero lido
+            maior = num;
+            menor = num;
+        } else { // Compara os numeros seguintes
+            if (num > maior) {
+                maior = num;
+            }
+            if (num < menor) {
+                menor = num;
+            }
+        }
+    }
+    printf("\n--- Resultados Finais ---\n");
+    printf("O maior numero digitado foi: %d\n", maior);
+    printf("O menor numero digitado foi: %d\n", menor);
+    return 0;
+}
