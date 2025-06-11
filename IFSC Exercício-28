@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char nomeCorretor[50]; 
+    float valorVenda;       
+    float comissaoCorretor; 
+    float totVendasEmpresa = 0; 
+
+    // Loop para processar os 3 corretores
+    for (int i = 0; i < 3; i++) {
+        printf("\n--- Corretor %d ---\n", i + 1);
+        printf("Digite o nome do corretor: ");
+        fgets(nomeCorretor, sizeof(nomeCorretor), stdin);
+        nomeCorretor[strcspn(nomeCorretor, "\n")] = '\0';
+        printf("Digite o valor da venda do corretor: ");
+        scanf("%f", &valorVenda);
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
+        totVendasEmpresa += valorVenda;
+
+        // Estrutura if-else if-else para calcular a comissão
+        if (valorVenda > 50000.00) {
+            comissaoCorretor = valorVenda * 0.12; // 12%
+        } else if (valorVenda >= 30000.00 && valorVenda <= 50000.00) {
+            comissaoCorretor = valorVenda * 0.095; // 9.5%
+        } else {
+            comissaoCorretor = valorVenda * 0.07; // 7%
+        }
+        printf("Relatorio do Corretor:\n");
+        printf("Nome: %s\n", nomeCorretor);
+        printf("Valor da Venda: R$ %.2f\n", valorVenda);
+        printf("Comissao: R$ %.2f\n", comissaoCorretor);
+    }
+    printf("\n--- Relatorio Geral da Empresa ---\n");
+    printf("Total de Vendas da Empresa: R$ %.2f\n", totVendasEmpresa);
+    return 0;
+}
