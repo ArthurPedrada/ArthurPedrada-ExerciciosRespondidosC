@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int Data, DD, MM, AA;
+
+    printf("--- Conversao de Formato de Data ---\n");
+    printf("Digite uma data no formato DDMMAA: ");
+    scanf("%d", &Data);
+
+    // Extrai dia, mes e ano
+    AA = Data % 100;
+    Data /= 100;
+    MM = Data % 100;
+    Data /= 100;
+    DD = Data;
+
+    printf("A data no formato AAMMDD e: %02d%02d%02d\n", AA, MM, DD);
+    // %02d garante que o número seja impresso com dois dígitos (com zero à esquerda, se necessário)
+
+    return 0;
+}
