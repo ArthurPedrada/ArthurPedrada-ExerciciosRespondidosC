@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() {
+    int num;
+    int somaPares = 0;
+    int contPares = 0;
+    float media;
+    printf("--- Media de Numeros Pares (digite 0 para finalizar) ---\n");
+    do {
+        printf("Digite um numero (0 para sair): ");
+        scanf("%d", &num);
+        if (num != 0) { // Processa o número apenas se não for o sentinela
+            if (num % 2 == 0) { // Verifica se é par
+                somaPares += num;
+                contPares++;
+            }
+        }
+    } while (num != 0);
+    if (contPares > 0) {
+        media = (float)somaPares / contPares;
+        printf("\nSoma dos numeros pares: %d\n", somaPares);
+        printf("Quantidade de numeros pares: %d\n", contPares);
+        printf("Media dos numeros pares: %.2f\n", media);
+    } else {
+        printf("\nNenhum numero par valido foi digitado.\n");
+    }
+    return 0;
+}
