@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para altura e sexo
+    double altura;
+    char sexo;
+    double pesoIdeal;
+
+    printf("--- Calculo de Peso Ideal ---\n");
+
+    // Solicita e le a altura
+    printf("Digite a altura (em metros, ex: 1.75): ");
+    scanf("%lf", &altura);
+
+    // Limpa o buffer do teclado
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    // Solicita e le o sexo
+    printf("Digite o sexo (M para masculino, F para feminino): ");
+    scanf("%c", &sexo);
+
+    // Converte para maiuscula para facilitar a comparacao
+    if (sexo >= 'a' && sexo <= 'z') {
+        sexo = sexo - 32; // Converte para maiuscula (ASCII)
+    }
+
+    // Calcula o peso ideal com base no sexo
+    if (sexo == 'M') {
+        pesoIdeal = (72.7 * altura) - 58;
+        printf("\nO peso ideal para um homem de %.2lf m eh: %.2lf kg\n", altura, pesoIdeal);
+    } else if (sexo == 'F') {
+        pesoIdeal = (62.1 * altura) - 44.7;
+        printf("\nO peso ideal para uma mulher de %.2lf m eh: %.2lf kg\n", altura, pesoIdeal);
+    } else {
+        printf("\nSexo invalido. Por favor, insira 'M' ou 'F'.\n");
+    }
+
+    return 0;
+}
