@@ -1,1 +1,36 @@
+#include <stdio.h>
+#include <limits.h> // Para INT_MAX e INT_MIN
+
+int main() {
+    // Variaveis para o numero lido, maior e menor
+    int numero;
+    int maior = INT_MIN; // Inicializa maior com o menor valor possivel de int
+    int menor = INT_MAX; // Inicializa menor com o maior valor possivel de int
+
+    printf("--- Encontra Maior e Menor entre 10 Numeros ---\n");
+
+    // Loop para ler 10 numeros
+    for (int i = 1; i <= 10; i++) {
+        printf("Digite o %do numero inteiro: ", i);
+        scanf("%d", &numero);
+
+        // Atualiza o maior, se necessario
+        if (numero > maior) {
+            maior = numero;
+        }
+
+        // Atualiza o menor, se necessario
+        if (numero < menor) {
+            menor = numero;
+        }
+    }
+
+    // Imprime o maior e o menor valor encontrados
+    printf("\nO maior valor digitado eh: %d\n", maior);
+    printf("O menor valor digitado eh: %d\n", menor);
+
+    return 0;
+}
+
+    
 
