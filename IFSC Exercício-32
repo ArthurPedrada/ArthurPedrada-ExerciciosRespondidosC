@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <string.h> 
+
+int main() {
+    // Var do nome do cliente abaixo
+    char nomeCliente[99];
+    //Var dos preços abaixo
+    double prParafuso,prPorca,prArruela;
+    //var das quantidades abaixo
+    int qtd_parafuso,qtd_porca,qtd_arruela;
+    //var dos totais brutos dos itens abaixo
+    double totParafuso_bruto,totPorca_bruto,totArruela_bruto;
+    //Var dos descontos dos itens abaixo
+    double desc_parafuso,desc_porca,desc_arruela;
+    //Var para usar depois abaixo
+    double tot_desconto = 0.0,tot_pagar = 0.0 ;
+    
+     //mensg para o usuário se localizar 
+    printf("--- Calculo de Compra de Pecas Mecanicas ---\n");
+
+    printf("Digite o nome do cliente:");
+        fgets(nomeCliente, sizeof(nomeCliente), stdin);
+        nomeCliente[strcspn(nomeCliente, "\n")] = '\0';
+
+
+    printf("--- Precos Unitarios das Peças ---\n");
+    printf("Parafuso:");
+    scanf("%lf",&prParafuso);
+    printf("Porca:");
+    scanf("%lf",&prPorca);
+    printf("Arruela:");
+    scanf("%lf",&prArruela);
+    
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    //Agora vou pôr o pedido de inserção das quantidades
+    printf("--- Quantidade das Peças ---\n");
+    printf("Parafuso:");
+    scanf("%d",&qtd_parafuso);
+    printf("Porca:");
+    scanf("%d",&qtd_porca);
+    printf("Arruela:");
+    scanf("%d",&qtd_arruela);
+    
+     while ((c = getchar()) != '\n' && c != EOF);
+
+
+    // 1. Aqui é a logica para calcular subtotal, desconto por item, e valor final por item
+    totParafuso_bruto = prParafuso * qtd_parafuso;
+    totPorca_bruto = prPorca * qtd_porca;
+    totArruela_bruto = prArruela * qtd_arruela;
+    //Calculo do desconto
+    desc_parafuso = totParafuso_bruto * 0.20;
+    desc_porca = totPorca_bruto * 0.10;
+    desc_arruela = totArruela_bruto * 0.30;
+
+    // 2. Aqui é a logica para somar o total de desconto geral e o total a pagar
+     tot_desconto = desc_parafuso +  desc_porca + desc_arruela;
+     tot_pagar = (totParafuso_bruto + totPorca_bruto + totArruela_bruto) - tot_desconto;
+    // 3. Aqui imprimo o relatorio final
+    printf("--- Relatório Final ---\n");
+     printf("Cliente: %s\n", nomeCliente);
+    printf("\nQuantidades compradas:\n");
+    printf("  Parafusos: %d\n", qtd_parafuso);
+    printf("  Porcas: %d\n", qtd_porca);
+    printf("  Arruelas: %d\n", qtd_arruela);
+    printf("\nDetalhes dos valores (R$):\n");
+    printf("  Subtotal Parafusos: %.2lf (Desconto: %.2lf)\n", totParafuso_bruto, desc_parafuso);
+    printf("  Subtotal Porcas: %.2lf (Desconto: %.2lf)\n", totPorca_bruto, desc_porca);
+    printf("  Subtotal Arruelas: %.2lf (Desconto: %.2lf)\n", totArruela_bruto, desc_arruela);
+    printf("\nTotal de Desconto Aplicado: R$ %.2lf\n", tot_desconto);
+    printf("TOTAL A PAGAR PELA COMPRA: R$ %.2lf\n", tot_pagar);
+    
+    
+   
+    
+    return 0;
+}
