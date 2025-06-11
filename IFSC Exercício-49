@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para o codigo do aluno, notas e media final
+    int codigoAluno;
+    double nota1, nota2, nota3;
+    double mediaFinal;
+
+    printf("--- Calculo de Media Ponderada do Aluno ---\n");
+
+    // Solicita e le o codigo do aluno
+    printf("Digite o codigo do aluno: ");
+    scanf("%d", &codigoAluno);
+
+    // Solicita e le as tres notas
+    printf("Digite a primeira nota: ");
+    scanf("%lf", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%lf", &nota2);
+    printf("Digite a terceira nota: ");
+    scanf("%lf", &nota3);
+
+    // Calcula a media ponderada
+    // Pesos: 1a nota (4), 2a nota (3), 3a nota (3)
+    // Media = (N1*P1 + N2*P2 + N3*P3) / (P1+P2+P3)
+    mediaFinal = (nota1 * 4 + nota2 * 3 + nota3 * 3) / (4 + 3 + 3);
+
+    // Imprime o codigo do aluno e a media final
+    printf("\nCodigo do Aluno: %d\n", codigoAluno);
+    printf("Media Final do Aluno: %.2lf\n", mediaFinal);
+
+    return 0;
+}
