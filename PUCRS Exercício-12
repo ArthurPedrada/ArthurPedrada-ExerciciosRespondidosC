@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int n; // O número para o qual a tabuada será calculada
+    printf("--- Calculo de Tabuadas para 20 Valores ---\n");
+    // Loop externo para ler 20 valores de 'n'
+    for (int i = 0; i < 20; i++) {
+        printf("Digite o %dº numero (n): ", i + 1);
+        scanf("%d", &n);
+        printf("\nTabuada de %d:\n", n);
+        // Loop interno para calcular e imprimir a tabuada de 'n'
+        for (int j = 1; j <= n; j++) { // j vai de 1 até n
+            printf("%d x %d = %d\n", j, n, j * n);
+        }
+        printf("\n"); // Adiciona uma linha em branco para separar as tabuadas
+    }
+    return 0;
+}
