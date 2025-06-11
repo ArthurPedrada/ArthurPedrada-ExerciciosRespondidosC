@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int vCompra, vPago_Cliente;
+    int troco;
+    int quantidadeNotas100, quantidadeNotas10, quantidadeNotas1;
+    int trocoRestante;
+    printf("--- Calculo de Troco ---\n");
+    printf("Digite o valor da compra: ");
+    scanf("%d", &vCompra); // %d para int
+    printf("Digite o valor a ser pago: ");
+    scanf("%d", &vPago_Cliente); 
+    
+    if (vPago_Cliente < vCompra) {
+        printf("Pagamento insuficiente. O cliente ainda deve R$ %d.\n", vCompra - vPago_Cliente);
+    } else if (vPago_Cliente == vCompra) {
+        printf("Nao ha troco. O valor pago e igual ao valor da compra.\n");
+    } else {
+        // CASO: Existe troco positivo
+        troco = vPago_Cliente - vCompra;
+        quantidadeNotas100 = troco / 100;
+        trocoRestante = troco % 100;
+        quantidadeNotas10 = trocoRestante / 10;
+        trocoRestante = trocoRestante % 10;
+        quantidadeNotas1 = trocoRestante / 1;
+        quantidadeNotas1 = trocoRestante;
+         printf("--- Relatório ---\n");
+         printf("Valor da compra =,%d\n",vCompra);
+         printf("Valor pago pelo cliente =,%d\n",vPago_Cliente);
+         printf("Valor do troco =,%d\n",troco);
+         printf("--- A quantidade de cada tipo de nota ---\n");
+         printf("Quantidade de notas de 100 = %d\n",quantidadeNotas100);
+         printf("Quantidade de notas de 10 = %d\n",quantidadeNotas10);
+         printf("Quantidade de notas de 1 = %d\n",quantidadeNotas1);
+    }
+
+    return 0;
+}
