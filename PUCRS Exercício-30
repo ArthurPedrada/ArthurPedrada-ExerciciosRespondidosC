@@ -1,1 +1,24 @@
+#include <stdio.h>
+#include <math.h> 
+
+int main() {
+    // Variaveis para o raio e a area
+    double raio;
+    double area;
+    const double PI = 3.14159; // Definindo PI manualmente, ou usar M_PI do math.h
+
+    printf("--- Calculo da Area de um Circulo ---\n");
+
+    // Solicita e le o raio do circulo
+    printf("Digite o raio do circulo: ");
+    scanf("%lf", &raio);
+
+    // Calcula a area do circulo (Area = PI * raio^2)
+    area = PI * (raio * raio); // ou area = PI * pow(raio, 2); se usar math.h
+
+    // Imprime a area calculada
+    printf("\nA area do circulo com raio %.2lf eh: %.2lf\n", raio, area);
+
+    return 0;
+}
 
