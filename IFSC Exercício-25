@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c, temp;
+
+    printf("--- Impressao em Ordem Crescente ---\n");
+    printf("Digite tres valores inteiros:\n");
+    scanf("%d %d %d", &a, &b, &c);
+
+    // Ordena os números usando comparações e trocas
+    if (a > b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+    if (a > c) {
+        temp = a;
+        a = c;
+        c = temp;
+    }
+    if (b > c) {
+        temp = b;
+        b = c;
+        c = temp;
+    }
+
+    printf("Os numeros em ordem crescente sao: %d, %d, %d\n", a, b, c);
+
+    return 0;
+}
