@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para anos, meses, dias e o total de dias
+    int anos;
+    int meses;
+    int dias;
+    long int totalDias; // Usamos long int para garantir que o total de dias nao estoure
+
+    printf("--- Conversor de Idade para Dias ---\n");
+    printf("Considerando 1 ano = 365 dias e 1 mes = 30 dias.\n");
+
+    // Solicita e le os anos
+    printf("Digite a idade em anos: ");
+    scanf("%d", &anos);
+
+    // Solicita e le os meses
+    printf("Digite a idade em meses: ");
+    scanf("%d", &meses);
+
+    // Solicita e le os dias
+    printf("Digite a idade em dias: ");
+    scanf("%d", &dias);
+
+    // Calcula o total de dias
+    totalDias = (long int)anos * 365 + (long int)meses * 30 + dias;
+
+    // Imprime o resultado
+    printf("\nA idade total expressa em dias eh: %ld dias.\n", totalDias);
+
+    return 0;
+}
