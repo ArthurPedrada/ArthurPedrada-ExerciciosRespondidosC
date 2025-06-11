@@ -1,1 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para o numero e a soma dos digitos
+    int numero;
+    int digito1, digito2, digito3;
+    int somaDigitos;
+
+    printf("--- Soma dos Digitos de um Numero de Tres Digitos ---\n");
+
+    // Solicita e le o numero de tres digitos
+    printf("Digite um numero inteiro de tres digitos (ex: 123): ");
+    scanf("%d", &numero);
+
+    // Verifica se o numero tem tres digitos
+    if (numero < 100 || numero > 999) {
+        printf("\nErro: O numero digitado nao tem tres digitos.\n");
+    } else {
+        // Calcula os digitos usando operacoes de divisao e modulo
+        digito1 = numero / 100;         // Centenas
+        digito2 = (numero % 100) / 10;  // Dezenas
+        digito3 = numero % 10;          // Unidades
+
+        // Calcula a soma dos digitos
+        somaDigitos = digito1 + digito2 + digito3;
+
+        // Imprime a soma dos digitos
+        printf("\nA soma dos digitos de %d eh: %d\n", numero, somaDigitos);
+    }
 
