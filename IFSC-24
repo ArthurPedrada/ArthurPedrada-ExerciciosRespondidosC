@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float prova1, prova2, prova3;
+    float media;
+
+    printf("--- Media Ponderada de Tres Provas ---\n");
+    printf("Digite a nota da primeira prova: ");
+    scanf("%f", &prova1);
+    printf("Digite a nota da segunda prova: ");
+    scanf("%f", &prova2);
+    printf("Digite a nota da terceira prova: ");
+    scanf("%f", &prova3);
+
+    media = (prova1 * 2 + prova2 * 3 + prova3 * 5) / 10.0;
+
+    printf("A media ponderada e: %.2f\n", media);
+
+    return 0;
+}
