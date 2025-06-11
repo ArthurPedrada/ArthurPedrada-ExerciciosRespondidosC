@@ -1,7 +1,7 @@
 Projeto de Exercícios respondidos em C
-Descrição
+Descrição:
 
-Este é um projeto básico criado como parte de um projeto da disciplina Prog.Estruturada em C.(Anteriormente eram 150)Aqui estão 100 questões respondidas em C
+Este é um projeto criado como parte de uma lista de exercício da disciplina Prog.Estruturada em C.(Anteriormente eram 150)Aqui estão 100 questões respondidas em C
 
    
     Nome: Arthur Gabriel Miranda Rebouças
