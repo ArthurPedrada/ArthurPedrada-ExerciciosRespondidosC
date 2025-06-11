@@ -1,1 +1,63 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para o valor do saque e as quantidades de notas
+    int valorSaque;
+    int valorRestante;
+
+    int qtdNotas100 = 0;
+    int qtdNotas50 = 0;
+    int qtdNotas20 = 0;
+    int qtdNotas10 = 0;
+    int qtdNotas5 = 0;
+    int qtdNotas2 = 0;
+    int qtdNotas1 = 0;
+
+    printf("--- Simulador de Caixa Eletronico ---\n");
+
+    // Solicita o valor a sacar
+    printf("Digite o valor que deseja sacar (apenas inteiros): R$ ");
+    scanf("%d", &valorSaque);
+
+    // Verifica se o valor do saque eh valido
+    if (valorSaque <= 0) {
+        printf("\nValor de saque invalido. Por favor, insira um valor positivo.\n");
+        return 1; // Encerra o programa com erro
+    }
+
+    valorRestante = valorSaque; // Inicializa o valor restante para o calculo
+
+    // Logica para calcular a quantidade de cada nota, priorizando as maiores
+    qtdNotas100 = valorRestante / 100;
+    valorRestante %= 100; // valorRestante = valorRestante % 100;
+
+    qtdNotas50 = valorRestante / 50;
+    valorRestante %= 50;
+
+    qtdNotas20 = valorRestante / 20;
+    valorRestante %= 20;
+
+    qtdNotas10 = valorRestante / 10;
+    valorRestante %= 10;
+
+    qtdNotas5 = valorRestante / 5;
+    valorRestante %= 5;
+
+    qtdNotas2 = valorRestante / 2;
+    valorRestante %= 2;
+
+    qtdNotas1 = valorRestante; // O que sobrou eh em notas de 1
+
+    // Imprime o resultado
+    printf("\nPara sacar R$ %d, o caixa entregara:\n", valorSaque);
+    if (qtdNotas100 > 0) printf("  Notas de R$ 100: %d\n", qtdNotas100);
+    if (qtdNotas50 > 0) printf("  Notas de R$ 50: %d\n", qtdNotas50);
+    if (qtdNotas20 > 0) printf("  Notas de R$ 20: %d\n", qtdNotas20);
+    if (qtdNotas10 > 0) printf("  Notas de R$ 10: %d\n", qtdNotas10);
+    if (qtdNotas5 > 0) printf("  Notas de R$ 5: %d\n", qtdNotas5);
+    if (qtdNotas2 > 0) printf("  Notas de R$ 2: %d\n", qtdNotas2);
+    if (qtdNotas1 > 0) printf("  Notas de R$ 1: %d\n", qtdNotas1);
+
+    return 0;
+}
 
