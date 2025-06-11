@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para quantidade de pessoas, idade e contador
+    int nPessoas;
+    int idade;
+    int contadorMaioresIdade = 0; // Inicializa o contador de pessoas com 18 ou mais
+
+    printf("--- Contagem de Maiores de Idade (N Pessoas) ---\n");
+
+    // Solicita a quantidade de pessoas (N) ao usuario
+    printf("Digite a quantidade de pessoas (N): ");
+    scanf("%d", &nPessoas);
+
+    // Loop para ler a idade de N pessoas
+    for (int i = 1; i <= nPessoas; i++) {
+        printf("Digite a idade da pessoa %d: ", i);
+        scanf("%d", &idade);
+
+        // Verifica se a idade eh maior ou igual a 18
+        if (idade >= 18) {
+            contadorMaioresIdade++; // Incrementa o contador
+        }
+    }
+
+    // Imprime a quantidade de pessoas com 18 anos ou mais
+    printf("\nQuantidade de pessoas com 18 anos ou mais: %d\n", contadorMaioresIdade);
+
+    return 0;
+}
