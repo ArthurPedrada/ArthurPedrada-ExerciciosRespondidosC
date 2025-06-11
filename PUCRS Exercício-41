@@ -1,1 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    // Define o tamanho do vetor
+    const int TAMANHO = 5;
+    float vetor[TAMANHO]; // Declara um vetor de 5 numeros de ponto flutuante
+    float soma = 0.0;     // Variavel para acumular a soma
+
+    printf("--- Soma dos Elementos de um Vetor de 5 Numeros Flutuantes ---\n");
+
+    // Preenche o vetor com 5 numeros de ponto flutuante
+    printf("Digite 5 numeros de ponto flutuante:\n");
+    for (int i = 0; i < TAMANHO; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%f", &vetor[i]); // Usa %f para float
+        soma += vetor[i];      // Acumula a soma
+    }
+
+    // Imprime a soma de todos os elementos
+    printf("\nA soma de todos os elementos do vetor eh: %.2f\n", soma);
+
+    return 0;
+}
 
