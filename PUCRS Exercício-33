@@ -1,1 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para as notas e a media
+    double nota;
+    double somaNotas = 0.0;
+    double media;
+
+    printf("--- Calculo da Media Aritmetica de 5 Notas ---\n");
+
+    // Loop para ler 5 notas
+    for (int i = 1; i <= 5; i++) {
+        printf("Digite a %da nota: ", i);
+        scanf("%lf", &nota);
+        somaNotas += nota; // Acumula a nota na soma
+    }
+
+    // Calcula a media
+    media = somaNotas / 5.0;
+
+    // Imprime a media
+    printf("\nA media aritmetica das 5 notas eh: %.2lf\n", media);
+
+    return 0;
+}
 
