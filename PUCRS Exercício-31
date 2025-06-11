@@ -1,1 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    // Variaveis para as temperaturas em Celsius e Fahrenheit
+    double celsius;
+    double fahrenheit;
+
+    printf("--- Conversor de Temperatura (Celsius para Fahrenheit) ---\n");
+
+    // Solicita e le a temperatura em Celsius
+    printf("Digite a temperatura em graus Celsius: ");
+    scanf("%lf", &celsius);
+
+    // Converte Celsius para Fahrenheit
+    // Formula: F = (C * 9/5) + 32
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    // Imprime a temperatura convertida
+    printf("\n%.2lf graus Celsius equivalem a %.2lf graus Fahrenheit.\n", celsius, fahrenheit);
+
+    return 0;
+}
 
