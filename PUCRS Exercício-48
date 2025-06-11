@@ -1,1 +1,66 @@
+#include <stdio.h>
+#include <string.h> // Para strlen, strcpy, strcmp
+#include <stdlib.h> // Para qsort
+
+// Funcao de comparacao para qsort (ordena strings em ordem alfabetica)
+int compararStrings(const void *a, const void *b) {
+    // Os argumentos sao ponteiros para ponteiros de char (char**)
+    return strcmp(*(const char **)a, *(const char **)b);
+}
+
+int main() {
+    // Define o numero maximo de nomes
+    const int MAX_NOMES = 10;
+    // Declara um array de ponteiros para char (cada ponteiro apontara para uma string)
+    char nomes[MAX_NOMES][100]; // Cada nome pode ter ate 99 caracteres
+    int n; // Numero de nomes a serem lidos
+
+    // Variavel para limpar o buffer do teclado
+    int c;
+
+    printf("--- Ordenacao de Nomes em Ordem Alfabetica ---\n");
+
+    // Solicita o numero de nomes a serem lidos
+    printf("Quantos nomes deseja inserir (maximo %d)? ", MAX_NOMES);
+    scanf("%d", &n);
+
+    // Limpa o buffer do teclado apos o scanf
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    // Garante que N nao exceda o limite
+    if (n > MAX_NOMES || n < 1) {
+        printf("Numero de nomes invalido. Usando %d como padrao.\n", MAX_NOMES);
+        n = MAX_NOMES; // Define para o maximo ou ajusta para um valor valido
+    }
+
+    // Le os N nomes
+    printf("Digite %d nomes:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Nome %d: ", i + 1);
+        fgets(nomes[i], sizeof(nomes[i]), stdin);
+        nomes[i][strcspn(nomes[i], "\n")] = '\0'; // Remove o '\n'
+    }
+
+    // Imprime os nomes ANTES da ordenacao (opcional)
+    printf("\nNomes ANTES da ordenacao:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s\n", nomes[i]);
+    }
+
+    // Ordena o array de nomes usando qsort
+    // qsort precisa de:
+    // 1. Ponteiro para o inicio do array
+    // 2. Numero de elementos
+    // 3. Tamanho de cada elemento
+    // 4. Funcao de comparacao
+    qsort(nomes, n, sizeof(nomes[0]), compararStrings);
+
+    // Imprime os nomes DEPOIS da ordenacao
+    printf("\nNomes DEPOIS da ordenacao (alfabetica):\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s\n", nomes[i]);
+    }
+
+    return 0;
+}
 
