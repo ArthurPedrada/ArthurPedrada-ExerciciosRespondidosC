@@ -1,1 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    // Variavel para o numero
+    int numero;
+
+    printf("--- Verifica se um Numero eh Positivo, Negativo ou Zero ---\n");
+
+    // Solicita e le o numero
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+
+    // Verifica a condicao do numero
+    if (numero > 0) {
+        printf("\nO numero %d eh POSITIVO.\n", numero);
+    } else if (numero < 0) {
+        printf("\nO numero %d eh NEGATIVO.\n", numero);
+    } else {
+        printf("\nO numero eh ZERO.\n");
+    }
+
+    return 0;
+}
 
